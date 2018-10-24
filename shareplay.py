@@ -140,6 +140,8 @@ class SpotifyMusicController(MusicController):
         except KeyError as e:
             log.info(e)
             return "Didnt find anything dude"
+        if track['name'].lower() == 'all i want for christmas is you':
+            return 'Go fuck yourself!'
         sp.user_playlist_add_tracks(
             user['id'], playlist_id, [track['id']]
         )
